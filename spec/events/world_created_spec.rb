@@ -15,6 +15,10 @@ RSpec.describe CraftyCoordinates::Events::WorldCreated do
     described_class.new(attributes)
   end
 
+  it 'returns world_created as name without setting' do
+    expect(subject.name).to eq('world_created')
+  end
+
   it 'returns created_at as DateTime' do
     expect(subject.created_at).to be_a(DateTime)
   end
