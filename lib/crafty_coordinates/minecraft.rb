@@ -1,4 +1,4 @@
-require 'dry-struct'
+require 'crafty_coordinates/entity'
 require 'crafty_coordinates/minecraft/platform'
 
 module CraftyCoordinates
