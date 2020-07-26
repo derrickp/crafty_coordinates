@@ -8,8 +8,8 @@ module CraftyCoordinates
     class WorldCreated < Event
       NAME = 'world_created'
 
-      attribute :name, Types::Strict::String.default(NAME).constrained(eql: NAME)
-      attribute :world_name, Types::Strict::String
+      attribute :name, Types::String.default(NAME).constrained(eql: NAME)
+      attribute :world_name, Types::String
       attribute :created_at, Types::JSON::DateTime
       attribute? :platform, CraftyCoordinates::Minecraft::PLATFORMS
     end
