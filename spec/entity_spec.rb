@@ -24,6 +24,24 @@ RSpec.describe CraftyCoordinates::Entity do
     }
   end
 
+  context 'given string keys' do
+    subject { TestEntity.new(attributes) }
+
+    let(:attributes) do
+      {
+        'name' => 'test',
+        'other' => 'thing',
+        'inner' => {
+          'name' => 'craft'
+        }
+      }
+    end
+
+    it 'still gets created' do
+      expect(subject).to be_a(TestEntity)
+    end
+  end
+
   describe '#copy' do
     subject do
       TestEntity.new(attributes).copy(new_attributes)
